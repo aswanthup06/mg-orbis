@@ -107,13 +107,23 @@ export default function Home() {
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="text-white font-extralight text-2xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
+        className="text-white hidden md:block font-extralight text-2xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
       >
         We are an India-based export company dedicated to connecting
         high-quality products with international markets. Our mission is
         to simplify global trade by providing reliable sourcing, quality
         assurance, and efficient logistics while building long-term
         partnerships based on trust and transparency.
+      </motion.h1>
+
+      <motion.h1
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="text-white md:hidden font-extralight text-2xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
+      >
+        We are an India-based export company dedicated to connecting
+        high-quality products with international markets. 
       </motion.h1>
 
       <motion.div
