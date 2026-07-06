@@ -68,7 +68,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
             </div>
             <div>
               <p className="text-sm text-zinc-400">Phone</p>
-              <p className="font-medium">+91 98765 43210</p>
+              <p className="font-medium">+91 7902578771</p>
             </div>
           </a>
 
@@ -81,13 +81,13 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
             </div>
             <div>
               <p className="text-sm text-zinc-400">Email</p>
-              <p className="font-medium">hello@example.com</p>
+              <p className="font-medium">mggikhin@gmail.com</p>
             </div>
           </a>
         </div>
 
         {/* Contact Form */}
-        <form className="space-y-4">
+        {/* <form className="space-y-4">
           <input
             type="text"
             placeholder="Your Name"
@@ -113,7 +113,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
             <Send size={18} />
             Send Message
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );

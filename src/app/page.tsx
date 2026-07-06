@@ -663,14 +663,14 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <Image
-              src="/images/gikhin.jpg"
+              src="/images/company.jpg"
               alt=""
               width={1920}
               height={800}
               className="w-full h-80 md:h-96 lg:h-120 object-cover"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -696,7 +696,7 @@ export default function Home() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-white/80 mb-4 text-sm md:text-base font-medium"
+              className="text-blue-500 mb-4 text-sm md:text-base font-light"
             >
               — Gikhin Gopinath, Founder, MG Orbis
             </motion.h4>
@@ -729,7 +729,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.2, rotate: 5 }}
               transition={{ duration: 0.2 }}
-              href="https://instagram.com/orbisexports"
+              href="https://www.instagram.com/mg.orbis?igsh=MTJ2enk1MnU3d3pybA=="
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 transition-colors"
@@ -765,7 +765,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.2, rotate: -5 }}
               transition={{ duration: 0.2 }}
-              href="https://linkedin.com/company/orbisexports"
+              href="https://www.linkedin.com/company/mg-orbis"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500 transition-colors"
