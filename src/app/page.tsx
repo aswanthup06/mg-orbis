@@ -41,124 +41,116 @@ export default function Home() {
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}></Modal>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <motion.nav
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="px-4 md:px-12 lg:px-24 xl:px-50 w-full absolute z-50 top-0 bg-white/10 backdrop-blur-sm md:bg-transparent"
-        >
-          <div className="flex w-full items-center justify-between px-4 py-1 md:py-3">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-             <Image
-  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[90px] lg:h-[90px] object-contain"
-  src="/images/logo.png"
-  alt="logo"
-  width={90}
-  height={90}
-  priority
-/>
-            </motion.div>
-            <div>
-              <ContactButton onClick={() => setIsOpen(true)} />
-            </div>
-          </div>
-        </motion.nav>
+      <section className="relative min-h-dvh flex items-center overflow-hidden">
+  {/* Background Image - using background instead of Image component */}
+  <div 
+    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/images/bg.jpg')",
+    }}
+  >
+    {/* Optional overlay gradient */}
+    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+  </div>
 
-        <motion.div
-          initial={{ scale: 1.1 }}
+  {/* Navbar - stays absolute */}
+  <motion.nav
+    initial={{ y: -100, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    className="px-4 md:px-12 lg:px-24 xl:px-50 w-full absolute z-50 top-0 bg-white/20 backdrop-blur-sm md:backdrop-blur-none md:bg-transparent"
+  >
+    <div className="flex w-full items-center justify-between px-4 py-1 md:py-3">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Image
+          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[90px] lg:h-[90px] object-contain"
+          src="/images/logo.png"
+          alt="logo"
+          width={90}
+          height={90}
+          priority
+        />
+      </motion.div>
+      <div>
+        <ContactButton onClick={() => setIsOpen(true)} />
+      </div>
+    </div>
+  </motion.nav>
+
+  {/* Content - relative, no absolute */}
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+    className="relative z-10 w-full px-4 md:px-12 lg:px-24 xl:px-50 py-20"
+  >
+    <div className="w-full max-w-6xl mx-auto">
+      <motion.h3
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mb-4 text-blue-400 flex gap-2 items-center bg-black/30 w-fit px-3 py-1 backdrop-blur-2xl rounded-full shadow-lg text-sm"
+      >
+        <motion.span
+          initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          <Image
-            src="/images/bg.jpg"
-            alt=""
-            width={1000}
-            height={1000}
-            className="w-full h-dvh object-cover"
-          />
-        </motion.div>
+          transition={{ duration: 0.3, delay: 0.3 }}
+          className="w-2 h-2 bg-blue-500 rounded-full inline-block"
+        ></motion.span>
+        MG Orbis - Connecting India to Global Markets
+      </motion.h3>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute top-0 left-0 w-full h-full bg-black/10 backdrop-blur-sm"
-        ></motion.div>
+      <motion.h1
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="text-white font-extralight text-2xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
+      >
+        We are an India-based export company dedicated to connecting
+        high-quality products with international markets. Our mission is
+        to simplify global trade by providing reliable sourcing, quality
+        assurance, and efficient logistics while building long-term
+        partnerships based on trust and transparency.
+      </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute px-4 md:px-12 lg:px-24 xl:px-50 top-0 left-0 w-full h-full bg-black/10 flex flex-col justify-center items-center"
-        >
-          <div className="w-full max-w-6xl">
-            <motion.h3
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-4 text-blue-400 flex gap-2 items-center bg-black/20 w-fit px-3 py-1 backdrop-blur-2xl rounded-full shadow-lg text-sm"
-            >
-                 <motion.span
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.3 }}
-                  className="w-2 h-2 bg-blue-500 rounded-full inline-block"
-                ></motion.span>MG Orbis - Connecting India to Global
-              Markets
-            </motion.h3>
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+      >
+        <ContactButton onClick={() => setIsOpen(true)} />
+      </motion.div>
 
-            <motion.h1
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-white font-extralight text-2xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
-            >
-              We are an India-based export company dedicated to connecting
-              high-quality products with international markets. Our mission is
-              to simplify global trade by providing reliable sourcing, quality
-              assurance, and efficient logistics while building long-term
-              partnerships based on trust and transparency.
-            </motion.h1>
-
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-            >
-              <ContactButton onClick={() => setIsOpen(true)} />
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-wrap gap-8 md:gap-20 mt-10"
-            >
-              {[
-                { number: "200+", label: "Happy Customers" },
-                { number: "50+", label: "Countries Served" },
-                { number: "99%", label: "Satisfaction Rate" },
-              ].map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                    {stat.number}
-                  </h2>
-                  <h4 className="text-white/60 text-sm">{stat.label}</h4>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.div>
-      </section>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="flex flex-wrap gap-8 md:gap-20 mt-10"
+      >
+        {[
+          { number: "200+", label: "Happy Customers" },
+          { number: "50+", label: "Countries Served" },
+          { number: "99%", label: "Satisfaction Rate" },
+        ].map((stat, idx) => (
+          <motion.div
+            key={idx}
+            variants={fadeInUp}
+            whileHover={{ scale: 1.1, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold text-white">
+              {stat.number}
+            </h2>
+            <h4 className="text-white/60 text-sm">{stat.label}</h4>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </motion.div>
+</section>
 
       {/* Learn About Us Section */}
       <motion.section
