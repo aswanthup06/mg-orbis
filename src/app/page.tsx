@@ -46,20 +46,21 @@ export default function Home() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="px-4 md:px-12 lg:px-24 xl:px-50 w-full absolute z-50 top-0"
+          className="px-4 md:px-12 lg:px-24 xl:px-50 w-full absolute z-50 top-0 bg-white/10 backdrop-blur-sm md:bg-transparent"
         >
-          <div className="flex w-full items-center justify-between px-4 py-3">
+          <div className="flex w-full items-center justify-between px-4 py-1 md:py-3">
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image
-                className=""
-                src="/images/logo.png"
-                alt="logo"
-                width={90}
-                height={90}
-              />
+             <Image
+  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[90px] lg:h-[90px] object-contain"
+  src="/images/logo.png"
+  alt="logo"
+  width={90}
+  height={90}
+  priority
+/>
             </motion.div>
             <div>
               <ContactButton onClick={() => setIsOpen(true)} />
@@ -114,7 +115,7 @@ export default function Home() {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-white font-extralight text-xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
+              className="text-white font-extralight text-2xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-[80%] mb-10 leading-tight"
             >
               We are an India-based export company dedicated to connecting
               high-quality products with international markets. Our mission is
