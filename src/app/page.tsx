@@ -101,7 +101,12 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mb-4 text-blue-400 flex gap-2 items-center bg-black/20 w-fit px-3 py-1 backdrop-blur-2xl rounded-full shadow-lg text-sm"
             >
-              <SiNormalizedotcss /> MG Orbis - Connecting India to Global
+                 <motion.span
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                  className="w-2 h-2 bg-blue-500 rounded-full inline-block"
+                ></motion.span>MG Orbis - Connecting India to Global
               Markets
             </motion.h3>
 
@@ -163,15 +168,18 @@ export default function Home() {
         transition={{ duration: 0.6 }}
         className="px-4 md:px-12 lg:px-24 xl:px-50 py-16 md:py-20"
       >
-        <motion.h3
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-4 text-blue-500 flex gap-2 items-center text-sm font-medium"
-        >
-          <SiNormalizedotcss /> Learn About Us
-        </motion.h3>
+      
+        <div className="flex items-center gap-3 mb-6">
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: 32 }}
+              transition={{ duration: 0.5 }}
+              className="w-1 bg-blue-500 rounded-full"
+            ></motion.div>
+            <h3 className="text-sm font-medium tracking-wider text-blue-400 uppercase">
+            Learn About Us
+            </h3>
+          </div>
 
         <motion.h2
           initial={{ x: -20, opacity: 0 }}
@@ -401,12 +409,7 @@ export default function Home() {
                 className="w-1 bg-blue-500 rounded-full"
               ></motion.div>
               <h3 className="text-sm font-medium tracking-wider text-blue-400 uppercase flex items-center gap-2">
-                <motion.span
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.3 }}
-                  className="w-2 h-2 bg-blue-500 rounded-full inline-block"
-                ></motion.span>
+             
                 Why Choose MG Orbis?
               </h3>
             </div>
