@@ -66,11 +66,11 @@ export default function Home() {
         transition={{ duration: 0.3 }}
       >
         <Image
-          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[90px] lg:h-[90px] object-contain"
-          src="/images/logo.png"
+          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[120px] lg:h-[100px] object-contain"
+          src="/images/logo1.png"
           alt="logo"
-          width={90}
-          height={90}
+          width={100}
+          height={100}
           priority
         />
       </motion.div>
