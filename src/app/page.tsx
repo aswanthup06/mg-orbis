@@ -92,7 +92,7 @@ export default function Home() {
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mb-4 text-blue-400 flex gap-2 items-center bg-black/30 w-fit px-3 py-1 backdrop-blur-2xl rounded-full shadow-lg text-xs md:text-sm"
+        className="mb-4 text-blue-400 flex gap-2 items-center bg-black/30 w-fit px-3 py-2 backdrop-blur-2xl rounded-full shadow-lg text-xs md:text-sm"
       >
         <motion.span
           initial={{ scale: 0 }}
@@ -466,7 +466,7 @@ export default function Home() {
               ))}
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -494,7 +494,7 @@ export default function Home() {
                   />
                 </motion.svg>
               </motion.button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </motion.div>
       </motion.section>
@@ -559,7 +559,7 @@ export default function Home() {
                   <span className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300">
                     {item}
                   </span>
-                  <motion.svg
+                  {/* <motion.svg
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                     className="w-4 h-4 text-white/20 ml-auto group-hover:text-blue-400/50 transition-all duration-300"
@@ -573,7 +573,7 @@ export default function Home() {
                       strokeLinejoin="round"
                       d="M9 5l7 7-7 7"
                     />
-                  </motion.svg>
+                  </motion.svg> */}
                 </motion.div>
               ))}
             </motion.div>
