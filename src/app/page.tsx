@@ -92,7 +92,7 @@ export default function Home() {
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mb-4 text-blue-400 flex gap-2 items-center bg-black/30 w-fit px-3 py-1 backdrop-blur-2xl rounded-full shadow-lg text-sm"
+        className="mb-4 text-blue-400 flex gap-2 items-center bg-black/30 w-fit px-3 py-1 backdrop-blur-2xl rounded-full shadow-lg text-xs md:text-sm"
       >
         <motion.span
           initial={{ scale: 0 }}
