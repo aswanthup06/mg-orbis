@@ -141,9 +141,9 @@ export default function Home() {
         className="flex flex-wrap gap-8 md:gap-20 mt-10"
       >
         {[
-          { number: "200+", label: "Happy Customers" },
-          { number: "50+", label: "Countries Served" },
-          { number: "99%", label: "Satisfaction Rate" },
+          { number: "2026", label: "Established" },
+          { number: "B2B", label: "Global Trade" },
+          { number: "Worldwide", label: "Export Ready" },
         ].map((stat, idx) => (
           <motion.div
             key={idx}
