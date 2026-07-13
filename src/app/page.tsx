@@ -60,13 +60,13 @@ export default function Home() {
     transition={{ duration: 0.6, ease: "easeOut" }}
     className="px-4 md:px-12 lg:px-24 xl:px-50 w-full absolute z-50 top-0 bg-white/20 backdrop-blur-sm md:backdrop-blur-none md:bg-transparent"
   >
-    <div className="flex w-full items-center justify-between px-4 py-1 md:py-3">
+    <div className="flex w-full items-center justify-between px-4 py-2 md:py-3">
       <motion.div
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >
         <Image
-          className="w-14  sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[120px] lg:h-[100px] object-contain"
+          className="w-16 h-full   md:w-20 md:h-20 lg:w-[120px] lg:h-[100px] object-contain"
           src="/images/logo1.png"
           alt="logo"
           width={100}
