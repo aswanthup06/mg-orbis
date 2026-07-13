@@ -66,7 +66,7 @@ export default function Home() {
         transition={{ duration: 0.3 }}
       >
         <Image
-          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[120px] lg:h-[100px] object-contain"
+          className="w-14  sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-[120px] lg:h-[100px] object-contain"
           src="/images/logo1.png"
           alt="logo"
           width={100}
