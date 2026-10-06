@@ -1,4 +1,5 @@
 "use client";
+
 import { SiNormalizedotcss } from "react-icons/si";
 import Image from "next/image";
 import ContactButton from "./comp/ContactButton";
@@ -704,7 +705,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-blue-500 mb-4 text-sm md:text-base font-light"
             >
-              — Gikhin Gopinath, Founder, MG Orbis
+              — Gikhin MG, Founder, MG Orbis
             </motion.h4>
 
             <motion.div
@@ -727,7 +728,7 @@ export default function Home() {
         className="w-full border-t border-gray-200/10 bg-black/20 backdrop-blur-sm py-5 text-center text-xs text-gray-500"
       >
         <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-          <span>&copy; {new Date().getFullYear()} Orbis Exports</span>
+          <span>&copy; {new Date().getFullYear()} MG Orbis</span>
           <span className="hidden sm:inline text-gray-700">•</span>
           <span>All rights reserved</span>
           <span className="hidden sm:inline text-gray-700">•</span>
