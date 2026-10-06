@@ -20,13 +20,13 @@ const products = [
     name: "Tea & Coffee",
     category: "Agro",
     description: "Single-estate teas and specialty coffee beans.",
-    image: "/design/t design (2).webp",
+    image: "/design/t design (1).webp",
   },
   {
     name: "Rice & Grains",
     category: "Agro",
     description: "Basmati and non-basmati rice, pulses and cereals.",
-    image: "/design/t design (1).webp",
+    image: "/design/t design (2).webp",
   },
  
 ];
