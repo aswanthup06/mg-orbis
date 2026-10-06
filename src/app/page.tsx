@@ -13,10 +13,10 @@ export default function Page() {
     <div className="hide-scrollbar overflow-x-auto h-dvh">
       <Hero />
       <About />
+       <Products />
       <ExportPortfolio />
       <WhyChooseUs />
       <Process />
-      <Products />
       <Founder />
       <Footer />
       <ContactModal />

@@ -14,38 +14,21 @@ const products = [
     name: "Spices",
     category: "Agro",
     description: "Whole and ground spices, sourced direct from growers.",
-    image: "https://picsum.photos/seed/orbis-spices/900/700",
+    image: "/design/t design (3).webp",
   },
   {
     name: "Tea & Coffee",
     category: "Agro",
     description: "Single-estate teas and specialty coffee beans.",
-    image: "https://picsum.photos/seed/orbis-tea/900/700",
+    image: "/design/t design (2).webp",
   },
   {
     name: "Rice & Grains",
     category: "Agro",
     description: "Basmati and non-basmati rice, pulses and cereals.",
-    image: "https://picsum.photos/seed/orbis-rice/900/700",
+    image: "/design/t design (1).webp",
   },
-  {
-    name: "Textiles",
-    category: "Manufactured",
-    description: "Cotton fabrics, home textiles and ready-made garments.",
-    image: "https://picsum.photos/seed/orbis-textiles/900/700",
-  },
-  {
-    name: "Handicrafts",
-    category: "Manufactured",
-    description: "Handcrafted décor and artisan goods.",
-    image: "https://picsum.photos/seed/orbis-crafts/900/700",
-  },
-  {
-    name: "Marine Products",
-    category: "Seafood",
-    description: "Frozen and processed seafood to export standards.",
-    image: "https://picsum.photos/seed/orbis-marine/900/700",
-  },
+ 
 ];
 
 const container = {

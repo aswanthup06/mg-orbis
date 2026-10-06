@@ -18,7 +18,7 @@ export const company = {
   about: {
     eyebrow: "Learn About Us",
     description:
-      "Whether it is agricultural commodities, food products, textiles, consumer goods, or other export opportunities, we work closely with trusted suppliers to deliver products that meet international quality standards.",
+      "We work closely with trusted manufacturing partners to understand and meet our customers’ specific requirements, delivering quality products with consistency and reliability.",
     mission: {
       title: "Our Mission",
       description:
@@ -48,9 +48,9 @@ export const company = {
     eyebrow: "Export Portfolio",
     description: "Our export portfolio continues to grow and may include:",
     items: [
+      "Textiles & Apparel",
       "Agricultural Products",
       "Food & Beverages",
-      "Textiles & Apparel",
       "Consumer Goods",
       "Industrial Products",
       "FMCG Products",
