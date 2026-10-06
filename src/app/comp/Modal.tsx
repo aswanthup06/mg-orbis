@@ -104,7 +104,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               <motion.a
                 whileHover={{ x: 5, borderColor: "rgba(59,130,246,0.3)" }}
                 transition={{ duration: 0.2 }}
-                href="mailto:mggikhin@gmail.com"
+                href="mailto:sourcing@mgorbis.com"
                 className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all duration-300 hover:bg-blue-500/5"
               >
                 <div className="rounded-lg bg-blue-500/10 p-3">
@@ -112,7 +112,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                 </div>
                 <div>
                   <p className="text-xs text-white/40">Email</p>
-                  <p className="text-sm font-medium text-white/80">mggikhin@gmail.com</p>
+                  <p className="text-sm font-medium text-white/80">sourcing@mgorbis.com</p>
                 </div>
               </motion.a>
             </div>

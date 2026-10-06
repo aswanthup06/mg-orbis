@@ -467,35 +467,7 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 pt-6 border-t border-white/5"
-            >
-              <motion.button
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.3 }}
-                className="group flex items-center gap-3 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-300"
-              >
-                <span>Learn more about our services</span>
-                <motion.svg
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </motion.svg>
-              </motion.button>
-            </motion.div> */}
+       
           </motion.div>
         </motion.div>
       </motion.section>
