@@ -88,18 +88,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mb-8 inline-flex items-center gap-3 border border-white/10 bg-white/[0.03] px-3 py-1.5 backdrop-blur-sm"
+            className="mb-6 inline-flex max-w-full items-center gap-2 border border-white/10 bg-white/[0.03] px-2.5 py-1 backdrop-blur-sm sm:mb-8 sm:gap-3 sm:px-3 sm:py-1.5"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-1.5 w-1.5 shrink-0 sm:h-2 sm:w-2">
               <span className="absolute inline-flex h-full w-full animate-ping bg-blue-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 bg-blue-400" />
+              <span className="relative inline-flex h-full w-full bg-blue-400" />
             </span>
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-white/60">
+            <span className="truncate text-[10px] font-medium uppercase tracking-[0.18em] text-white/60 sm:text-xs sm:tracking-[0.3em]">
               {company.hero.badge}
             </span>
           </motion.div>
 
-          <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-semibold tracking-tight text-white text-4xl md:text-5xl lg:text-7xl">
             <RevealLine delay={0.15}>Connecting</RevealLine>
             <RevealLine delay={0.3}>
               <motion.span
@@ -139,26 +139,28 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
-          className="mt-20 grid max-w-2xl grid-cols-3 border-t border-white/10"
-        >
-          {company.hero.stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`pt-6 ${i > 0 ? "border-l border-white/10 pl-6" : ""}`}
-            >
-              <p className="text-2xl font-semibold tabular-nums text-white sm:text-3xl">
-                <CountUp value={String(stat.number)} />
-              </p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-white/40">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
+  className="mt-12 grid max-w-2xl grid-cols-3 border-t border-white/10 sm:mt-20"
+>
+  {company.hero.stats.map((stat, i) => (
+    <div
+      key={stat.label}
+      className={`min-w-0 pt-4 sm:pt-6 ${
+        i > 0 ? "border-l border-white/10 pl-3 sm:pl-6" : ""
+      }`}
+    >
+      <p className="text-xl font-semibold tabular-nums text-white sm:text-3xl">
+        <CountUp value={String(stat.number)} />
+      </p>
+      <p className="mt-1 text-[10px] uppercase leading-snug tracking-wide text-white/40 sm:text-xs sm:tracking-wider">
+        {stat.label}
+      </p>
+    </div>
+  ))}
+</motion.div>
       </div>
 
       {/* scroll cue */}
