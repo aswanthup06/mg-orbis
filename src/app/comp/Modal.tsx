@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, Send, X } from 'lucide-react';
+import { Check, Copy, Mail, Phone, Send, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ModalProps {
@@ -13,6 +13,8 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const [isSending, setIsSending] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const [status, setStatus] = useState<{
     type: 'success' | 'error';
     message: string;
@@ -121,6 +123,21 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
     }
   }
 
+  // Copy email
+  async function handleCopyEmail() {
+    try {
+      await navigator.clipboard.writeText('sourcing@mgorbis.com');
+
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Failed to copy email:', error);
+    }
+  }
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -129,7 +146,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
         >
           <motion.div
             ref={modalRef}
@@ -152,7 +169,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               duration: 0.25,
               ease: 'easeOut',
             }}
-            className="relative w-full max-w-lg rounded-2xl border border-white/5 bg-zinc-950/90 backdrop-blur-xl p-8 text-white shadow-2xl"
+            className="relative w-full max-w-lg rounded-2xl border border-white/5 bg-zinc-950/90 p-8 text-white shadow-2xl backdrop-blur-xl"
           >
             {/* Close Button */}
             <motion.button
@@ -167,9 +184,9 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                 duration: 0.2,
               }}
               onClick={onClose}
-              className="absolute top-4 right-4 rounded-full p-2 text-white/40 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-400"
-              aria-label="Close modal"
               type="button"
+              className="absolute right-4 top-4 rounded-full p-2 text-white/40 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-400"
+              aria-label="Close modal"
             >
               <X size={20} />
             </motion.button>
@@ -221,32 +238,55 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               </motion.a>
 
               {/* Email */}
-              <motion.a
-                whileHover={{
-                  x: 5,
-                  borderColor: 'rgba(59,130,246,0.3)',
-                }}
-                transition={{ duration: 0.2 }}
-                href="mailto:sourcing@mgorbis.com"
-                className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all duration-300 hover:bg-blue-500/5"
-              >
-                <div className="rounded-lg bg-blue-500/10 p-3">
+              <div className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all duration-300 hover:bg-blue-500/5">
+                <div className="shrink-0 rounded-lg bg-blue-500/10 p-3">
                   <Mail
                     size={18}
                     className="text-blue-400"
                   />
                 </div>
 
-                <div>
+                <a
+                  href="mailto:sourcing@mgorbis.com"
+                  className="min-w-0 flex-1"
+                >
                   <p className="text-xs text-white/40">
                     Email
                   </p>
 
-                  <p className="text-sm font-medium text-white/80">
+                  <p className="truncate text-sm font-medium text-white/80">
                     sourcing@mgorbis.com
                   </p>
-                </div>
-              </motion.a>
+                </a>
+
+                {/* Copy Button */}
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={handleCopyEmail}
+                  className="shrink-0 rounded-lg p-2 text-white/30 transition-colors hover:bg-blue-500/10 hover:text-blue-400"
+                  aria-label={
+                    copied
+                      ? 'Email copied'
+                      : 'Copy email address'
+                  }
+                  title={
+                    copied
+                      ? 'Copied'
+                      : 'Copy email address'
+                  }
+                >
+                  {copied ? (
+                    <Check
+                      size={16}
+                      className="text-green-400"
+                    />
+                  ) : (
+                    <Copy size={16} />
+                  )}
+                </motion.button>
+              </div>
             </div>
 
             {/* Contact Form */}
@@ -310,7 +350,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                 )}
               </AnimatePresence>
 
-              {/* Submit */}
+              {/* Submit Button */}
               <motion.button
                 whileHover={{
                   scale: isSending ? 1 : 1.02,
