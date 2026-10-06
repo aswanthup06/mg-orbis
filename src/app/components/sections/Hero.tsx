@@ -88,7 +88,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mb-6 inline-flex max-w-full items-center gap-2 border border-white/10 bg-white/[0.03] px-2.5 py-1 backdrop-blur-sm sm:mb-8 sm:gap-3 sm:px-3 sm:py-1.5"
+            className="hidden mb-6 md:inline-flex max-w-full items-center gap-2 border border-white/10 bg-white/[0.03] px-2.5 py-1 backdrop-blur-sm sm:mb-8 sm:gap-3 sm:px-3 sm:py-1.5"
           >
             <span className="relative flex h-1.5 w-1.5 shrink-0 sm:h-2 sm:w-2">
               <span className="absolute inline-flex h-full w-full animate-ping bg-blue-400 opacity-75" />
@@ -96,6 +96,21 @@ export default function Hero() {
             </span>
             <span className="truncate text-[10px] font-medium uppercase tracking-[0.18em] text-white/60 sm:text-xs sm:tracking-[0.3em]">
               {company.hero.badge}
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE }}
+            className="md:hidden mb-6 inline-flex max-w-full items-center gap-2 border border-white/10 bg-white/[0.03] px-2.5 py-1 backdrop-blur-sm sm:mb-8 sm:gap-3 sm:px-3 sm:py-1.5"
+          >
+            <span className="relative flex h-1.5 w-1.5 shrink-0 sm:h-2 sm:w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping bg-blue-400 opacity-75" />
+              <span className="relative inline-flex h-full w-full bg-blue-400" />
+            </span>
+            <span className="truncate text-[10px] font-medium uppercase tracking-[0.18em] text-white/60 sm:text-xs sm:tracking-[0.3em]">
+              Mg Orbis
             </span>
           </motion.div>
 
