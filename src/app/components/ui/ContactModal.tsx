@@ -114,7 +114,7 @@ export default function ContactModal() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.4, ease: EASE }}
-            className="hide-scrollbar relative max-h-[92dvh] w-full max-w-lg overflow-y-auto border border-white/10 bg-zinc-950 p-6 md:p-10"
+            className="relative max-h-[92dvh] w-full max-w-lg overflow-y-auto border border-white/10 bg-zinc-950 p-6 md:p-10"
           >
             {/* close */}
             <button
