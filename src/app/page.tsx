@@ -5,12 +5,12 @@ import ExportPortfolio from "./components/sections/ExportPortfolio";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
 import Process from "./components/sections/Process";
 import Founder from "./components/sections/Founder";
-import ContactModal from "./components/ui/ContactModal";
+import ContactModalLoader from "./components/ui/ContactModalLoader";
 
 export default function Page() {
   return (
-    <div className="h-dvh">
-      <main>
+    <>
+      <main className="overflow-x-hidden">
         <Hero />
         <About />
         <Products />
@@ -20,7 +20,7 @@ export default function Page() {
         <Founder />
       </main>
 
-      <ContactModal />
-    </div>
+      <ContactModalLoader />
+    </>
   );
 }
