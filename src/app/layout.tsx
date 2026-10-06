@@ -20,7 +20,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "MG Orbis",
-  description: "Quality Beyond Borders. MG Orbis is dedicated to building trusted global trade partnerships by sourcing quality products, ensuring seamless logistics, and delivering excellence from origin to destination.",
+  description:
+    "Quality Beyond Borders. MG Orbis is dedicated to building trusted global trade partnerships by sourcing quality products, ensuring seamless logistics, and delivering excellence from origin to destination.",
 };
 
 export default function RootLayout({
@@ -33,9 +34,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className={manrope.className}>
-        {children}
-      </body>
+      <body className={manrope.className}>{children}</body>
     </html>
   );
 }
