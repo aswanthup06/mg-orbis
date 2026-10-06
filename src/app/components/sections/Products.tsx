@@ -11,21 +11,21 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 // Later you can move this into company.ts as `company.products`.
 const products = [
   {
-    name: "Spices",
-    category: "Agro",
-    description: "Whole and ground spices, sourced direct from growers.",
+    name: "Black Premium Designs",
+    category: "T-Shirt",
+    description: "Bold, versatile styles crafted for modern streetwear collections.",
     image: "/design/t design (3).webp",
   },
   {
-    name: "Tea & Coffee",
-    category: "Agro",
-    description: "Single-estate teas and specialty coffee beans.",
+    name: "White Premium Designs",
+    category: "T-Shirt",
+    description: "Clean, refined styles designed for contemporary fashion collections.",
     image: "/design/t design (1).webp",
   },
   {
-    name: "Rice & Grains",
-    category: "Agro",
-    description: "Basmati and non-basmati rice, pulses and cereals.",
+    name: "White — Minimal Statement",
+    category: "T-Shirt",
+    description: "Clean artistic graphics designed for modern premium fashion collections.",
     image: "/design/t design (2).webp",
   },
  
