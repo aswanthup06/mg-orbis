@@ -11,15 +11,15 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 // Later you can move this into company.ts as `company.products`.
 const products = [
   {
-    name: "Black Premium Designs",
-    category: "T-Shirt",
-    description: "Bold, versatile styles crafted for modern streetwear collections.",
-    image: "/design/t design (3).webp",
-  },
-  {
     name: "White Premium Designs",
     category: "T-Shirt",
     description: "Clean, refined styles designed for contemporary fashion collections.",
+    image: "/design/t design (3).webp",
+  },
+  {
+    name: "Black Premium Designs",
+    category: "T-Shirt",
+    description: "Bold, versatile styles crafted for modern streetwear collections.",
     image: "/design/t design (1).webp",
   },
   {
