@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "./components/layout/Footer";
 import CustomCursor from "./components/ui/CustomCursor";
 import ScrollProgress from "./components/ui/ScrollProgress";
+import SmoothScroll from "./components/ui/SmoothScroll";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <body className={manrope.className}>
+         <SmoothScroll />
          <CustomCursor />
          <ScrollProgress />
         {children}
