@@ -107,6 +107,7 @@ export default function ContactModal() {
           }}
         >
           <motion.div
+            data-lenis-prevent
             role="dialog"
             aria-modal="true"
             aria-labelledby="contact-title"
