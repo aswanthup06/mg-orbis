@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Check } from "lucide-react";
 import SectionHeading from "../ui/SectionHeading";
 import { company } from "../../data/company";
@@ -18,8 +19,23 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 };
 
+const imageReveal = {
+  hidden: { clipPath: "inset(0 0 100% 0)" },
+  visible: {
+    clipPath: "inset(0 0 0% 0)",
+    transition: { duration: 1.1, ease: EASE },
+  },
+};
+
 export default function WhyChooseUs() {
   const { whyChooseUs } = company;
+
+  const imageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
     <section
@@ -35,17 +51,38 @@ export default function WhyChooseUs() {
       >
         {/* image */}
         <motion.div
-          variants={item}
+          ref={imageRef}
+          variants={imageReveal}
           className="group relative h-64 overflow-hidden border-b border-white/10 sm:h-80 lg:h-auto lg:min-h-[480px] lg:border-b-0 lg:border-r"
         >
-          <Image
-            src={whyChooseUs.image}
-            alt={whyChooseUs.eyebrow}
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover grayscale transition duration-700 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
-          />
-          <div className="absolute inset-0 bg-zinc-950/40 transition-opacity duration-700 group-hover:opacity-0" />
+          {/* parallax layer */}
+          <motion.div style={{ y }} className="absolute -inset-[10%]">
+            <Image
+              src={whyChooseUs.image}
+              alt={whyChooseUs.eyebrow}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            />
+          </motion.div>
+
+          {/* bottom gradient */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/10 to-transparent" />
+
+          {/* corner brackets */}
+          <span className="pointer-events-none absolute left-4 top-4 h-4 w-4 border-l border-t border-white/60 transition-all duration-500 group-hover:left-6 group-hover:top-6 group-hover:h-6 group-hover:w-6" />
+          <span className="pointer-events-none absolute bottom-4 right-4 h-4 w-4 border-b border-r border-white/60 transition-all duration-500 group-hover:bottom-6 group-hover:right-6 group-hover:h-6 group-hover:w-6" />
+
+          {/* caption */}
+          <div className="absolute bottom-0 left-0 flex items-center gap-3 p-5 md:p-6">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping bg-blue-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 bg-blue-400" />
+            </span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/80 sm:text-xs sm:tracking-[0.3em]">
+              Made in India · Shipped Worldwide
+            </span>
+          </div>
         </motion.div>
 
         {/* content */}
@@ -61,19 +98,29 @@ export default function WhyChooseUs() {
               <motion.li
                 key={label}
                 variants={item}
-                className="group flex cursor-default items-center gap-4 border-b border-white/10 py-4 transition-colors duration-300 hover:bg-white/[0.03]"
+                className="group relative cursor-default overflow-hidden border-b border-white/10 transition-colors duration-300 hover:bg-white/[0.03]"
               >
-                <span className="w-6 text-xs tabular-nums tracking-[0.3em] text-white/30">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="flex-1 text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
-                  {label}
-                </span>
-                <Check
-                  className="h-4 w-4 text-blue-400 opacity-40 transition-opacity duration-300 group-hover:opacity-100"
-                  strokeWidth={2}
+                {/* accent line */}
+                <span
                   aria-hidden="true"
+                  className="absolute inset-y-0 left-0 w-px origin-top scale-y-0 bg-blue-400 transition-transform duration-300 ease-out group-hover:scale-y-100"
                 />
+
+                <div className="flex items-center gap-4 py-4 transition-transform duration-300 ease-out group-hover:translate-x-3">
+                  <span className="w-6 text-xs tabular-nums tracking-[0.3em] text-white/30 transition-colors duration-300 group-hover:text-blue-400">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex-1 text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
+                    {label}
+                  </span>
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center border border-white/10 transition-colors duration-300 group-hover:border-blue-400 group-hover:bg-blue-400">
+                    <Check
+                      className="h-3.5 w-3.5 text-blue-400 transition-colors duration-300 group-hover:text-zinc-950"
+                      strokeWidth={2}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </div>
               </motion.li>
             ))}
           </ul>

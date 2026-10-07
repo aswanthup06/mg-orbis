@@ -93,7 +93,6 @@ export const company = {
       "Reliability",
       "Sustainability",
       "Innovation",
-      "Global Reach",
     ],
     description:
       "We aim to serve businesses across Asia, Europe, the Middle East, North America, and other international markets by delivering reliable export solutions tailored to customer needs.",

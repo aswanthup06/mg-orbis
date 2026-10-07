@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import SectionHeading from "../ui/SectionHeading";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+const CATALOG_URL = "/MG_ORBIS_Catalogue.pdf";
 
 // Placeholder data. Replace names, copy and images.
 // Later you can move this into company.ts as `company.products`.
@@ -28,7 +30,6 @@ const products = [
     description: "Clean artistic graphics designed for modern premium fashion collections.",
     image: "/design/t design (2).webp",
   },
- 
 ];
 
 const container = {
@@ -40,6 +41,47 @@ const item = {
   hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 };
+
+function CatalogLabel() {
+  return (
+    <>
+      <span>Download Catalog</span>
+      <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+    </>
+  );
+}
+
+function CatalogButton() {
+  return (
+    <a
+      href={CATALOG_URL}
+      download="MG_ORBIS_Catalogue.pdf"
+      aria-label="Download MG Orbis catalogue (PDF)"
+      className="group relative inline-flex h-9 cursor-pointer items-center overflow-hidden border border-white bg-white px-4 text-xs font-medium tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 active:scale-[0.98] sm:h-12 sm:px-6 sm:text-sm"
+    >
+      {/* fill */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 translate-y-full bg-zinc-950 transition-transform duration-300 ease-out group-hover:translate-y-0"
+      />
+
+      <span className="relative flex items-center">
+        {/* default layer */}
+        <span className="flex items-center gap-2 text-zinc-950 transition-transform duration-300 ease-out group-hover:-translate-y-[200%] sm:gap-3">
+          <CatalogLabel />
+        </span>
+
+        {/* hover layer */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 flex translate-y-[200%] items-center gap-2 text-white transition-transform duration-300 ease-out group-hover:translate-y-0 sm:gap-3"
+        >
+          <CatalogLabel />
+        </span>
+      </span>
+    </a>
+  );
+}
 
 export default function Products() {
   const enquire = () =>
@@ -56,16 +98,24 @@ export default function Products() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        <motion.div variants={item}>
-          <SectionHeading>Our Products</SectionHeading>
-        </motion.div>
+        <div className="mb-14 flex flex-col items-start gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
+          <div>
+            <motion.div variants={item}>
+              <SectionHeading>Our Products</SectionHeading>
+            </motion.div>
 
-        <motion.h2
-          variants={item}
-          className="mb-14 max-w-4xl text-2xl font-light leading-snug tracking-tight text-white/90 md:mb-20 md:text-3xl lg:text-4xl"
-        >
-          Quality goods from India, ready for global markets.
-        </motion.h2>
+            <motion.h2
+              variants={item}
+              className="max-w-4xl text-2xl font-light leading-snug tracking-tight text-white/90 md:text-3xl lg:text-4xl"
+            >
+              Quality goods from India, ready for global markets.
+            </motion.h2>
+          </div>
+
+          <motion.div variants={item} className="shrink-0">
+            <CatalogButton />
+          </motion.div>
+        </div>
 
         <ul className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3">
           {products.map((p, i) => (
@@ -81,9 +131,8 @@ export default function Products() {
                   alt={p.name}
                   fill
                   sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
-                  className="object-cover grayscale transition duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+                  className="object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-zinc-950/30 transition-opacity duration-700 group-hover:opacity-0" />
               </div>
 
               {/* content */}
