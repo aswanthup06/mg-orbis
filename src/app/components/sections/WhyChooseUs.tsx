@@ -106,21 +106,19 @@ export default function WhyChooseUs() {
                   className="absolute inset-y-0 left-0 w-px origin-top scale-y-0 bg-blue-400 transition-transform duration-300 ease-out group-hover:scale-y-100"
                 />
 
-                <div className="flex items-center gap-4 py-4 transition-transform duration-300 ease-out group-hover:translate-x-3">
-                  <span className="w-6 text-xs tabular-nums tracking-[0.3em] text-white/30 transition-colors duration-300 group-hover:text-blue-400">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="flex-1 text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
-                    {label}
-                  </span>
-                  <span className="mr-3 flex h-6 w-6 items-center justify-center border border-white/10 transition-colors duration-300 group-hover:border-blue-400 group-hover:bg-blue-400">
-                    <Check
-                      className="h-3.5 w-3.5 text-blue-400 transition-colors duration-300 group-hover:text-zinc-950"
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
-                  </span>
-                </div>
+             <div className="flex items-center gap-4 py-4 transition-transform duration-300 ease-out group-hover:translate-x-3">
+  <span className="w-6 text-xs tabular-nums tracking-[0.3em] text-white/30 transition-colors duration-300 group-hover:text-blue-400">
+    {String(i + 1).padStart(2, "0")}
+  </span>
+  <span className="flex-1 text-sm text-white/70 transition-colors duration-300 group-hover:text-white">
+    {label}
+  </span>
+  <Check
+    className="mr-3 h-4 w-4 text-blue-400 opacity-40 transition-opacity duration-300 group-hover:opacity-100"
+    strokeWidth={2}
+    aria-hidden="true"
+  />
+</div>
               </motion.li>
             ))}
           </ul>
