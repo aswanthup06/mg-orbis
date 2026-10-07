@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/layout/Footer";
+import CustomCursor from "./components/ui/CustomCursor";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <body className={manrope.className}>
+         <CustomCursor />
         {children}
         <Footer />
       </body>
