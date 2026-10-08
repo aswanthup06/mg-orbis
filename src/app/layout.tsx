@@ -13,16 +13,19 @@ const manrope = Manrope({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+const siteUrl = "https://www.mgorbis.com";
+const ogImage = `${siteUrl}/images/mgbanner.webp`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.mgorbis.com"),
+  metadataBase: new URL(siteUrl),
 
   title: {
-    default: "MG Orbis | Quality Beyond Borders",
+    default: "MG Orbis | Apparel Export & T-Shirt Sourcing from India",
     template: "%s | MG Orbis",
   },
 
   description:
-    "Quality Beyond Borders. MG Orbis builds trusted global trade partnerships by sourcing quality products, ensuring seamless logistics, and delivering excellence from origin to destination.",
+    "MG Orbis is an India-based apparel export and sourcing company specializing in premium cotton T-shirts, oversized fits, and private label/OEM manufacturing from Tiruppur — serving buyers across the UAE, Maldives, and GCC.",
 
   applicationName: "MG Orbis",
 
@@ -30,49 +33,64 @@ export const metadata: Metadata = {
     "MG Orbis",
     "mgorbis",
     "MG Orbis export",
-    "global trade",
-    "export solutions",
-    "Indian products",
-    "global markets",
-    "international trade",
-    "product sourcing",
-    "logistics",
+    "apparel export India",
+    "T-shirt manufacturer India",
+    "cotton T-shirt supplier India",
+    "oversized T-shirt manufacturer",
+    "private label T-shirt supplier",
+    "OEM T-shirt manufacturer India",
+    "ODM apparel sourcing India",
+    "Tiruppur T-shirt exporter",
+    "Tiruppur garment manufacturer",
+    "bulk T-shirt supplier",
+    "custom T-shirt manufacturer India",
+    "240 GSM T-shirt supplier",
+    "French Terry T-shirt manufacturer",
+    "knitwear exporter India",
+    "blank T-shirt supplier India",
+    "DTF printing T-shirt supplier",
+    "apparel sourcing company India",
+    "garment export company India",
+    "T-shirt supplier UAE",
+    "T-shirt supplier Dubai",
+    "apparel sourcing Maldives",
   ],
 
   alternates: {
-    canonical: "https://www.mgorbis.com/",
+    canonical: siteUrl,
   },
 
   openGraph: {
     type: "website",
-    url: "https://www.mgorbis.com/",
+    url: siteUrl,
     siteName: "MG Orbis",
-    title: "MG Orbis | Quality Beyond Borders",
+    title: "MG Orbis | Apparel Export & T-Shirt Sourcing from India",
     description:
-      "Building trusted global trade partnerships by sourcing quality products, ensuring seamless logistics, and delivering excellence from origin to destination.",
+      "MG Orbis is an India-based apparel export and sourcing company specializing in premium cotton T-shirts, oversized fits, and private label/OEM manufacturing from Tiruppur — serving buyers across the UAE, Maldives, and GCC.",
     locale: "en_US",
 
     images: [
       {
-        url: "/images/mgbanner.png",
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: "MG Orbis — Quality Beyond Borders",
+        alt: "MG Orbis — Apparel Export & T-Shirt Sourcing from India",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "MG Orbis | Quality Beyond Borders",
+    title: "MG Orbis | Apparel Export & T-Shirt Sourcing from India",
     description:
-      "Building trusted global trade partnerships by sourcing quality products, ensuring seamless logistics, and delivering excellence from origin to destination.",
-    images: ["/images/mgbanner.png"],
+      "MG Orbis is an India-based apparel export and sourcing company specializing in premium cotton T-shirts, oversized fits, and private label/OEM manufacturing from Tiruppur — serving buyers across the UAE, Maldives, and GCC.",
+    images: [ogImage],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -89,7 +107,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${manrope.variable} h-full antialiased`}
+    >
       <body className={manrope.className}>
         <SmoothScroll />
         <CustomCursor />
