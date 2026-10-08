@@ -18,7 +18,7 @@ export default function ContactButton({ onClick }: ContactButtonProps) {
     <button
       type="button"
       onClick={onClick}
-      aria-label="Contact MG Orbis"
+      aria-label="Contact"
       className="group relative inline-flex h-9 cursor-pointer items-center overflow-hidden border border-white bg-white px-4 text-xs font-medium tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 sm:h-12 sm:px-6 sm:text-sm"
     >
       {/* fill */}
